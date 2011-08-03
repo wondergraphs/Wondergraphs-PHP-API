@@ -72,6 +72,8 @@ class API {
      * Set the URL of the API server to use.
      *
      * This is something you will probably never need to do.
+     *
+     * @param string $root
      */
     public function setUrlRoot($root) {
         $this->urlRoot = $root;
@@ -84,7 +86,7 @@ class API {
     /**
      * Get a list of all users in the current organization.
      *
-     * @return An array of WG\User objects.
+     * @return array An array of WG\User objects.
      */
     public function getUsers() {
         $users = $this->doGet('users');
@@ -144,7 +146,7 @@ class API {
      *
      * @param array $list A list of stdClass objects.
      * @param string $type The full type name of the desired type.
-     * @return An array of objects from the supplied type.
+     * @return array An array of objects from the supplied type.
      */
     private function boxList(array $list, $type) {
         $result = array();
@@ -159,7 +161,7 @@ class API {
      *
      * @param object $orig A stdClass object.
      * @param string $type The full type name of the desired type.
-     * @return An object from the supplied type.
+     * @return object An object from the supplied type.
      */
     private function box(\stdClass $orig, $type) {
         $obj = new $type();

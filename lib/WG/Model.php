@@ -29,11 +29,46 @@ namespace WG;
  * A user resource.
  */
 class User {
+    /**
+     * @var string
+     */
     public $id; 
+
+    /**
+     * @var string
+     */
     public $email; 
+
+    /**
+     * @var string
+     */
     public $firstname; 
+
+    /**
+     * @var string
+     */
     public $lastname; 
+
+    /**
+     * Timezone identifier.
+     *
+     * A full list can be found in the TZ column at <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia</a>.
+     * @var string
+     */
     public $timeZoneId; 
+
+    /**
+     * User type.
+     *
+     * This should be any of "administrator", "analyst" or "viewer".
+     * @var string
+     */
     public $type; 
+
+    /**
+     * Whether or not this account is enabled.
+     *
+     * @var boolean
+     */
     public $active; 
 }
