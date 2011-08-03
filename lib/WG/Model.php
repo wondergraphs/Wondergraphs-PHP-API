@@ -25,6 +25,9 @@ THE SOFTWARE.
 
 namespace WG;
 
+/**
+ * A user resource.
+ */
 class User {
     public $id; 
     public $email; 

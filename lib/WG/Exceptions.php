@@ -25,9 +25,15 @@ THE SOFTWARE.
 
 namespace WG;
 
+/**
+ * Unauthorized: bad credentials supplied?
+ */
 class UnauthorizedException extends \Exception {
 }
 
+/**
+ * Unexpected request exception. May signal a connection problem.
+ */
 class RequestException extends \Exception {
     public function __construct($msg) {
         parent::__construct($msg);

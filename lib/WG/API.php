@@ -28,6 +28,9 @@ namespace WG;
 require_once dirname(__FILE__) . '/Exceptions.php';
 require_once dirname(__FILE__) . '/Model.php';
 
+/**
+ * This class wraps all API operations for the Wondergraphs REST API.
+ */
 class API {
     private $version = '$Id$';
 
