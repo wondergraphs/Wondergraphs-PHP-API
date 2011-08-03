@@ -1,0 +1,9 @@
+<?php
+// You need to change the values below before the examples will work:
+define('WG_EXAMPLES_ORGANIZATION', '');
+define('WG_EXAMPLES_APIKEY', '');
+
+// Optionally, change the value below if you are using a different
+// server (you will generally not need to do this). Uncomment when
+// changing.
+//define('WG_EXAMPLES_URLROOT', 'https://api.wondergraphs.com/api');
