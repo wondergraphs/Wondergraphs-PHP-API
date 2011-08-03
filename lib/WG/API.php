@@ -14,6 +14,12 @@ class API {
 
     private $client;
 
+    /**
+     * Create a new API instance.
+     *
+     * @param string $organization The name of the organization
+     * @param string $apiKey The API key to use.
+     */
     public function __construct($organization, $apiKey) {
         $this->organization = $organization;
         $this->apiKey = $apiKey;
@@ -28,20 +34,44 @@ class API {
         ));
     }
 
+    /**
+     * Free curl after use.
+     */
     function __destruct() {
         curl_close($this->client);
     }
 
+    /**
+     * Set the URL of the API server to use.
+     *
+     * This is something you will probably never need to do.
+     */
+    public function setUrlRoot($root) {
+        $this->urlRoot = $root;
+    }
+
+    /* -----------------------------------------------------------
+                          API methods below 
+       ----------------------------------------------------------- */
+
+    /**
+     * Get a list of all users in the current organization.
+     *
+     * @return An array of WG\User objects.
+     */
     public function getUsers() {
         $users = $this->doGet('users');
         $users = $this->boxList($users, 'WG\User');
         return $users;
     }
 
-    public function setUrlRoot($root) {
-        $this->urlRoot = $root;
-    }
+    /* -----------------------------------------------------------
+                        Utility methods below 
+       ----------------------------------------------------------- */
 
+    /**
+     * Execute a GET request
+     */
     private function doGet($method) {
         $url = $this->buildUrl($method);
 
@@ -67,6 +97,9 @@ class API {
         return $response;
     }
 
+    /**
+     * Builds a request URL
+     */
     private function buildUrl($method) {
         $url = $this->urlRoot;
         if ($url[strlen($url)-1] != '/') {
