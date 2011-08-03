@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
+<meta name="when" content="Wed, 03 Aug 2011 11:33:58 +0000">
+
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+<link rel="start" href="../../overview-summary.html">
+
+<title>WG/Exceptions.php (Wondergraphs PHP API)</title>
+
+</head>
+<body id="file" onload="parent.document.title=document.title;">
+
+<div class="header">
+<h1>Wondergraphs PHP API</h1>
+<ul>
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../../overview-files.html">Files</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../todo-list.html">Todo</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../index.html" target="_top">Frames</a>
+<a href="../../source/wg/exceptions.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<h1>WG/Exceptions.php</h1>
+<hr>
+
+<a name="line1"></a><pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span>
+<a name="line2"></a><span style="color: #666666; font-style: italic;">/*
+<a name="line3"></a>&nbsp;
+<a name="line4"></a>Copyright (C) 2011 by Wondergraphs LLC
+<a name="line5"></a>&nbsp;
+<a name="line6"></a>Permission is hereby granted, free of charge, to any person obtaining a copy
+<a name="line7"></a>of this software and associated documentation files (the &quot;Software&quot;), to deal
+<a name="line8"></a>in the Software without restriction, including without limitation the rights
+<a name="line9"></a>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+<a name="line10"></a>copies of the Software, and to permit persons to whom the Software is
+<a name="line11"></a>furnished to do so, subject to the following conditions:
+<a name="line12"></a>&nbsp;
+<a name="line13"></a>The above copyright notice and this permission notice shall be included in
+<a name="line14"></a>all copies or substantial portions of the Software.
+<a name="line15"></a>&nbsp;
+<a name="line16"></a>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+<a name="line17"></a>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+<a name="line18"></a>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+<a name="line19"></a>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+<a name="line20"></a>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+<a name="line21"></a>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+<a name="line22"></a>THE SOFTWARE.
+<a name="line23"></a>&nbsp;
+<a name="line24"></a>*/</span>
+<a name="line25"></a>&nbsp;
+<a name="line26"></a><span style="color: #000000; font-weight: bold;">namespace</span> WG<span style="color: #339933;">;</span>
+<a name="line27"></a>&nbsp;
+<a name="line28"></a><span style="color: #000000; font-weight: bold;">class</span> UnauthorizedException <span style="color: #000000; font-weight: bold;">extends</span> \Exception <span style="color: #009900;">&#123;</span>
+<a name="line29"></a><span style="color: #009900;">&#125;</span>
+<a name="line30"></a>&nbsp;
+<a name="line31"></a><span style="color: #000000; font-weight: bold;">class</span> RequestException <span style="color: #000000; font-weight: bold;">extends</span> \Exception <span style="color: #009900;">&#123;</span>
+<a name="line32"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> __construct<span style="color: #009900;">&#40;</span><span style="color: #000088;">$msg</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line33"></a>        parent<span style="color: #339933;">::</span>__construct<span style="color: #009900;">&#40;</span><span style="color: #000088;">$msg</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line34"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line35"></a><span style="color: #009900;">&#125;</span>
+<a name="line36"></a>&nbsp;</pre>
+<div class="header">
+<h1>Wondergraphs PHP API</h1>
+<ul>
+<li><a href="../../overview-summary.html">Overview</a></li>
+<li>Package</li><li>Class</li><li>Tree</li><li><a href="../../overview-files.html">Files</a></li>
+<li><a href="../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../todo-list.html">Todo</a></li>
+<li><a href="../../index-all.html">Index</a></li>
+</ul>
+</div>
+
+<div class="small_links">
+<a href="../../index.html" target="_top">Frames</a>
+<a href="../../source/wg/exceptions.php.html" target="_top">No frames</a>
+</div>
+<hr>
+
+<p id="footer">This document was generated by <a href="http://peej.github.com/phpdoctor/">PHPDoctor: The PHP Documentation Creator</a></p>
+
+</body>
+
+</html>
