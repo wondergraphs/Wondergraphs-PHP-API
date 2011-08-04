@@ -144,6 +144,18 @@ class API {
         return $user;
     }
 
+    /**
+     * Get a specific report.
+     *
+     * @param string $id The unique ID of the report to retrieve.
+     * @return Report A Report object.
+     */
+    public function getReport($id) {
+        $report = $this->doGet(array('reports', $id));
+        $report = $this->box($report, 'WG\Report');
+        return $report;
+    }
+
     /* -----------------------------------------------------------
                         Utility methods below 
        ----------------------------------------------------------- */
