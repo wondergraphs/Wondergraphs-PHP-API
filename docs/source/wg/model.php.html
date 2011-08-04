@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Wed, 03 Aug 2011 12:01:13 +0000">
+<meta name="when" content="Thu, 04 Aug 2011 09:20:44 +0000">
 
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
 <link rel="start" href="../../overview-summary.html">
@@ -68,49 +68,57 @@
 <a name="line30"></a> */</span>
 <a name="line31"></a><span style="color: #000000; font-weight: bold;">class</span> User <span style="color: #009900;">&#123;</span>
 <a name="line32"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line33"></a>     * @var string
-<a name="line34"></a>     */</span>
-<a name="line35"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span> 
-<a name="line36"></a>&nbsp;
-<a name="line37"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line38"></a>     * @var string
-<a name="line39"></a>     */</span>
-<a name="line40"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$email</span><span style="color: #339933;">;</span> 
-<a name="line41"></a>&nbsp;
-<a name="line42"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line43"></a>     * @var string
-<a name="line44"></a>     */</span>
-<a name="line45"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">;</span> 
-<a name="line46"></a>&nbsp;
-<a name="line47"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line48"></a>     * @var string
-<a name="line49"></a>     */</span>
-<a name="line50"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">;</span> 
-<a name="line51"></a>&nbsp;
-<a name="line52"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line53"></a>     * Timezone identifier.
-<a name="line54"></a>     *
-<a name="line55"></a>     * A full list can be found in the TZ column at &lt;a href=&quot;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&quot;&gt;Wikipedia&lt;/a&gt;.
+<a name="line33"></a>     * A unique string identifier for the object.
+<a name="line34"></a>     *
+<a name="line35"></a>     * @var string
+<a name="line36"></a>     */</span>
+<a name="line37"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span> 
+<a name="line38"></a>&nbsp;
+<a name="line39"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line40"></a>     * The e-mail address of the user, which is used to log in.
+<a name="line41"></a>     *
+<a name="line42"></a>     * @var string
+<a name="line43"></a>     */</span>
+<a name="line44"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$email</span><span style="color: #339933;">;</span> 
+<a name="line45"></a>&nbsp;
+<a name="line46"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line47"></a>     * First name of the user.
+<a name="line48"></a>     *
+<a name="line49"></a>     * @var string
+<a name="line50"></a>     */</span>
+<a name="line51"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">;</span> 
+<a name="line52"></a>&nbsp;
+<a name="line53"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line54"></a>     * Last name of the user.
+<a name="line55"></a>     *
 <a name="line56"></a>     * @var string
 <a name="line57"></a>     */</span>
-<a name="line58"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$timeZoneId</span><span style="color: #339933;">;</span> 
+<a name="line58"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">;</span> 
 <a name="line59"></a>&nbsp;
 <a name="line60"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line61"></a>     * User type.
+<a name="line61"></a>     * Timezone identifier.
 <a name="line62"></a>     *
-<a name="line63"></a>     * This should be any of &quot;administrator&quot;, &quot;analyst&quot; or &quot;viewer&quot;.
+<a name="line63"></a>     * A full list can be found in the TZ column at &lt;a href=&quot;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&quot;&gt;Wikipedia&lt;/a&gt;.
 <a name="line64"></a>     * @var string
 <a name="line65"></a>     */</span>
-<a name="line66"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$type</span><span style="color: #339933;">;</span> 
+<a name="line66"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$timeZoneId</span><span style="color: #339933;">;</span> 
 <a name="line67"></a>&nbsp;
 <a name="line68"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line69"></a>     * Whether or not this account is enabled.
+<a name="line69"></a>     * User type.
 <a name="line70"></a>     *
-<a name="line71"></a>     * @var boolean
-<a name="line72"></a>     */</span>
-<a name="line73"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$active</span><span style="color: #339933;">;</span> 
-<a name="line74"></a><span style="color: #009900;">&#125;</span>
-<a name="line75"></a>&nbsp;</pre>
+<a name="line71"></a>     * This should be any of &quot;administrator&quot;, &quot;analyst&quot; or &quot;viewer&quot;.
+<a name="line72"></a>     * @var string
+<a name="line73"></a>     */</span>
+<a name="line74"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$type</span><span style="color: #339933;">;</span> 
+<a name="line75"></a>&nbsp;
+<a name="line76"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line77"></a>     * Whether or not this account is enabled.
+<a name="line78"></a>     *
+<a name="line79"></a>     * @var boolean
+<a name="line80"></a>     */</span>
+<a name="line81"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$active</span><span style="color: #339933;">;</span> 
+<a name="line82"></a><span style="color: #009900;">&#125;</span>
+<a name="line83"></a>&nbsp;</pre>
 <div class="header">
 <h1>Wondergraphs PHP API</h1>
 <ul>

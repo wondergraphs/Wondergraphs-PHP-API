@@ -30,21 +30,29 @@ namespace WG;
  */
 class User {
     /**
+     * A unique string identifier for the object.
+     *
      * @var string
      */
     public $id; 
 
     /**
+     * The e-mail address of the user, which is used to log in.
+     *
      * @var string
      */
     public $email; 
 
     /**
+     * First name of the user.
+     *
      * @var string
      */
     public $firstname; 
 
     /**
+     * Last name of the user.
+     *
      * @var string
      */
     public $lastname; 
