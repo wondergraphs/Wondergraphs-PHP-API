@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 04 Aug 2011 09:47:09 +0000">
+<meta name="when" content="Thu, 04 Aug 2011 12:04:59 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -76,12 +76,16 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </tr>
 <tr>
 <td class="type"> <a href="../wg/user.html">User</a></td>
-<td class="description"><p class="name"><a href="#getUser()">getUser</a>(mixed id)</p><p class="description">Get a specific user.</p></td>
+<td class="description"><p class="name"><a href="#getUser()">getUser</a>(string id)</p><p class="description">Get a specific user.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../wg/user.html">User</a></td>
+<td class="description"><p class="name"><a href="#createUser()">createUser</a>(string email, string firstname, string lastname, string password, string type)</p><p class="description">Create a new user.</p></td>
 </tr>
 </table>
 
 <h2 id="detail_method">Constructor Detail</h2>
-<a href="../source/wg/api.php.html#line50" class="location">WG/API.php at line 50</a>
+<a href="../source/wg/api.php.html#line53" class="location">WG/API.php at line 53</a>
 
 <h3 id="__construct()">__construct</h3>
 <code class="signature">public  void <strong>__construct</strong>(string organization, string apiKey)</code>
@@ -96,7 +100,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <hr>
 
 <h2 id="detail_method">Method Detail</h2>
-<a href="../source/wg/api.php.html#line78" class="location">WG/API.php at line 78</a>
+<a href="../source/wg/api.php.html#line81" class="location">WG/API.php at line 81</a>
 
 <h3 id="setUrlRoot()">setUrlRoot</h3>
 <code class="signature">public  void <strong>setUrlRoot</strong>(string root)</code>
@@ -105,27 +109,48 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line91" class="location">WG/API.php at line 91</a>
+<a href="../source/wg/api.php.html#line94" class="location">WG/API.php at line 94</a>
 
 <h3 id="getUsers()">getUsers</h3>
 <code class="signature">public  array <strong>getUsers</strong>()</code>
 <div class="details">
 <p>Get a list of all users in the current organization.</p><dl>
 <dt>Returns:</dt>
-<dd>An array of WG\User objects.</dd>
+<dd>An array of User objects.</dd>
 </dl>
 </div>
 
 <hr>
 
-<a href="../source/wg/api.php.html#line102" class="location">WG/API.php at line 102</a>
+<a href="../source/wg/api.php.html#line106" class="location">WG/API.php at line 106</a>
 
 <h3 id="getUser()">getUser</h3>
-<code class="signature">public  <a href="../wg/user.html">User</a> <strong>getUser</strong>(mixed id)</code>
+<code class="signature">public  <a href="../wg/user.html">User</a> <strong>getUser</strong>(string id)</code>
 <div class="details">
 <p>Get a specific user.</p><dl>
+<dt>Parameters:</dt>
+<dd>id - The unique ID of the user to retrieve.</dd>
 <dt>Returns:</dt>
 <dd>A User object.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line122" class="location">WG/API.php at line 122</a>
+
+<h3 id="createUser()">createUser</h3>
+<code class="signature">public  <a href="../wg/user.html">User</a> <strong>createUser</strong>(string email, string firstname, string lastname, string password, string type)</code>
+<div class="details">
+<p>Create a new user.</p><dl>
+<dt>Parameters:</dt>
+<dd></dd>
+<dd></dd>
+<dd></dd>
+<dd></dd>
+<dd>type - Optional user type. Defaults to <code>analyst</code>.</dd>
+<dt>Returns:</dt>
+<dd>The newly created user object.</dd>
 </dl>
 </div>
 
