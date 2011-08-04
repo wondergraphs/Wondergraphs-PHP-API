@@ -32,6 +32,12 @@ class UnauthorizedException extends \Exception {
 }
 
 /**
+ * Not found exception. The requested resource does not exist.
+ */
+class NotFoundException extends \Exception {
+}
+
+/**
  * Unexpected request exception. May signal a connection problem.
  */
 class RequestException extends \Exception {

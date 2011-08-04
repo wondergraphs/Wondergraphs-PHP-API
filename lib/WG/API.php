@@ -94,6 +94,17 @@ class API {
         return $users;
     }
 
+    /**
+     * Get a specific user.
+     *
+     * @return WG\User A User object.
+     */
+    public function getUser($id) {
+        $user = $this->doGet(array('users', $id));
+        $user = $this->box($user, 'WG\User');
+        return $user;
+    }
+
     /* -----------------------------------------------------------
                         Utility methods below 
        ----------------------------------------------------------- */
@@ -111,18 +122,20 @@ class API {
         if ($result === false) {
             throw new RequestException('Unexpected request error: ' . curl_error($this->client));
         }
+        $response = json_decode($result);
 
         $info = curl_getinfo($this->client);
         if ($info['http_code'] != 200) {
             switch ($info['http_code']) {
             case 401:
                 throw new UnauthorizedException();
+            case 404:
+                throw new NotFoundException();
             default:
                 throw new RequestException('Unexpected response code: ' . $info['http_code']);
             }
         }
 
-        $response = json_decode($result);
         return $response;
     }
 
@@ -135,6 +148,9 @@ class API {
             $url .= '/';
         }
         $url .= $this->apiVersion;
+        if (is_array($method)) {
+            $method = implode('/', $method);
+        }
         if ($method[0] != '/') {
             $url .= '/';
         }
