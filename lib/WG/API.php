@@ -110,6 +110,18 @@ class API {
     }
 
     /**
+     * Retrieves all reports of a user.
+     *
+     * @param string $id The unique ID of the user whose reports you'd like to retrieve.
+     * @return array An array of Report objects.
+     */
+    public function getReportsForUser($id) {
+        $user = $this->doGet(array('users', $id, 'reports'));
+        $user = $this->boxList($user, 'WG\Report');
+        return $user;
+    }
+
+    /**
      * Create a new user.
      *
      * @param string $email

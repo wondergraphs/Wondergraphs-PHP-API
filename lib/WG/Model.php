@@ -80,3 +80,36 @@ class User {
      */
     public $active; 
 }
+
+/**
+ * Report resource.
+ */
+class Report {
+    /**
+     * A unique string identifier for the object.
+     *
+     * @var string
+     */
+    public $id; 
+
+    /**
+     * The name of the report.
+     *
+     * @var string
+     */
+    public $name; 
+
+    /**
+     * The ID of the dataset on which this report is based.
+     *
+     * @var string
+     */
+    public $datasetId; 
+
+    /**
+     * The ID of the user that created this report.
+     *
+     * @var string
+     */
+    public $owner; 
+}
