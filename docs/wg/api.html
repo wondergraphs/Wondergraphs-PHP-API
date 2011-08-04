@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 04 Aug 2011 12:04:59 +0000">
+<meta name="when" content="Thu, 04 Aug 2011 13:07:41 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -79,6 +79,10 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#getUser()">getUser</a>(string id)</p><p class="description">Get a specific user.</p></td>
 </tr>
 <tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getReportsForUser()">getReportsForUser</a>(string id)</p><p class="description">Retrieves all reports of a user.</p></td>
+</tr>
+<tr>
 <td class="type"> <a href="../wg/user.html">User</a></td>
 <td class="description"><p class="name"><a href="#createUser()">createUser</a>(string email, string firstname, string lastname, string password, string type)</p><p class="description">Create a new user.</p></td>
 </tr>
@@ -137,7 +141,22 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line122" class="location">WG/API.php at line 122</a>
+<a href="../source/wg/api.php.html#line118" class="location">WG/API.php at line 118</a>
+
+<h3 id="getReportsForUser()">getReportsForUser</h3>
+<code class="signature">public  array <strong>getReportsForUser</strong>(string id)</code>
+<div class="details">
+<p>Retrieves all reports of a user.</p><dl>
+<dt>Parameters:</dt>
+<dd>id - The unique ID of the user whose reports you'd like to retrieve.</dd>
+<dt>Returns:</dt>
+<dd>An array of Report objects.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line134" class="location">WG/API.php at line 134</a>
 
 <h3 id="createUser()">createUser</h3>
 <code class="signature">public  <a href="../wg/user.html">User</a> <strong>createUser</strong>(string email, string firstname, string lastname, string password, string type)</code>

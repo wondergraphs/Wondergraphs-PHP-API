@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 04 Aug 2011 12:04:59 +0000">
+<meta name="when" content="Thu, 04 Aug 2011 13:07:41 +0000">
 
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
 <link rel="start" href="../../overview-summary.html">
@@ -118,7 +118,40 @@
 <a name="line80"></a>     */</span>
 <a name="line81"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$active</span><span style="color: #339933;">;</span> 
 <a name="line82"></a><span style="color: #009900;">&#125;</span>
-<a name="line83"></a>&nbsp;</pre>
+<a name="line83"></a>&nbsp;
+<a name="line84"></a><span style="color: #009933; font-style: italic;">/**
+<a name="line85"></a> * Report resource.
+<a name="line86"></a> */</span>
+<a name="line87"></a><span style="color: #000000; font-weight: bold;">class</span> Report <span style="color: #009900;">&#123;</span>
+<a name="line88"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line89"></a>     * A unique string identifier for the object.
+<a name="line90"></a>     *
+<a name="line91"></a>     * @var string
+<a name="line92"></a>     */</span>
+<a name="line93"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span> 
+<a name="line94"></a>&nbsp;
+<a name="line95"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line96"></a>     * The name of the report.
+<a name="line97"></a>     *
+<a name="line98"></a>     * @var string
+<a name="line99"></a>     */</span>
+<a name="line100"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$name</span><span style="color: #339933;">;</span> 
+<a name="line101"></a>&nbsp;
+<a name="line102"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line103"></a>     * The ID of the dataset on which this report is based.
+<a name="line104"></a>     *
+<a name="line105"></a>     * @var string
+<a name="line106"></a>     */</span>
+<a name="line107"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$datasetId</span><span style="color: #339933;">;</span> 
+<a name="line108"></a>&nbsp;
+<a name="line109"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line110"></a>     * The ID of the user that created this report.
+<a name="line111"></a>     *
+<a name="line112"></a>     * @var string
+<a name="line113"></a>     */</span>
+<a name="line114"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$owner</span><span style="color: #339933;">;</span> 
+<a name="line115"></a><span style="color: #009900;">&#125;</span>
+<a name="line116"></a>&nbsp;</pre>
 <div class="header">
 <h1>Wondergraphs PHP API</h1>
 <ul>

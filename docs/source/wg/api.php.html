@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 04 Aug 2011 12:04:59 +0000">
+<meta name="when" content="Thu, 04 Aug 2011 13:07:41 +0000">
 
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
 <link rel="start" href="../../overview-summary.html">
@@ -148,132 +148,144 @@
 <a name="line110"></a>    <span style="color: #009900;">&#125;</span>
 <a name="line111"></a>&nbsp;
 <a name="line112"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line113"></a>     * Create a new user.
+<a name="line113"></a>     * Retrieves all reports of a user.
 <a name="line114"></a>     *
-<a name="line115"></a>     * @param string $email
-<a name="line116"></a>     * @param string $firstname
-<a name="line117"></a>     * @param string $lastname
-<a name="line118"></a>     * @param string $password
-<a name="line119"></a>     * @param string $type Optional user type. Defaults to &lt;code&gt;analyst&lt;/code&gt;.
-<a name="line120"></a>     * @return User The newly created user object.
-<a name="line121"></a>     */</span>
-<a name="line122"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> createUser<span style="color: #009900;">&#40;</span><span style="color: #000088;">$email</span><span style="color: #339933;">,</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">,</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'analyst'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line123"></a>        <span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span>
-<a name="line124"></a>            <span style="color: #0000ff;">'email'</span>     <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$email</span><span style="color: #339933;">,</span>
-<a name="line125"></a>            <span style="color: #0000ff;">'firstname'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">,</span>
-<a name="line126"></a>            <span style="color: #0000ff;">'lastname'</span>  <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">,</span>
-<a name="line127"></a>            <span style="color: #0000ff;">'password'</span>  <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$password</span><span style="color: #339933;">,</span>
-<a name="line128"></a>            <span style="color: #0000ff;">'type'</span>      <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$type</span>
-<a name="line129"></a>        <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line130"></a>        <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doPost</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'users'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line131"></a>        <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">box</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$user</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'WG\User'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line132"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$user</span><span style="color: #339933;">;</span>
-<a name="line133"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line134"></a>&nbsp;
-<a name="line135"></a>    <span style="color: #666666; font-style: italic;">/* -----------------------------------------------------------
-<a name="line136"></a>                        Utility methods below 
-<a name="line137"></a>       ----------------------------------------------------------- */</span>
-<a name="line138"></a>&nbsp;
-<a name="line139"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line140"></a>     * Execute a GET request
-<a name="line141"></a>     */</span>
-<a name="line142"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> doGet<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line143"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doRequest</span><span style="color: #009900;">&#40;</span>API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPGET</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line144"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line145"></a>&nbsp;
-<a name="line146"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line147"></a>     * Execute a POST request
-<a name="line148"></a>     */</span>
-<a name="line149"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> doPost<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line150"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doRequest</span><span style="color: #009900;">&#40;</span>API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPPOST</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line151"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line152"></a>&nbsp;
-<a name="line153"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line154"></a>     * Send an API request
-<a name="line155"></a>     */</span>
-<a name="line156"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> doRequest<span style="color: #009900;">&#40;</span><span style="color: #000088;">$methodType</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line157"></a>        <span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">buildUrl</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line158"></a>&nbsp;
-<a name="line159"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$methodType</span> <span style="color: #339933;">==</span> API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPGET</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line160"></a>            <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_HTTPGET<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">TRUE</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line161"></a>        <span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$methodType</span> <span style="color: #339933;">==</span> API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPPOST</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line162"></a>            <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">TRUE</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line163"></a>            <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line164"></a>        <span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span>
-<a name="line165"></a>            <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> Exception<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unknown $methodType'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line166"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line167"></a>        <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_URL<span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line168"></a>&nbsp;
-<a name="line169"></a>        <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line170"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span> <span style="color: #339933;">===</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line171"></a>            <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> RequestException<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unexpected request error: '</span> <span style="color: #339933;">.</span> <a href="http://www.php.net/curl_error"><span style="color: #990000;">curl_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line172"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line173"></a>        <span style="color: #000088;">$response</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line174"></a>&nbsp;
-<a name="line175"></a>        <span style="color: #000088;">$info</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line176"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$info</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'http_code'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line177"></a>            <span style="color: #b1b100;">switch</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$info</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'http_code'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line178"></a>            <span style="color: #b1b100;">case</span> <span style="color: #cc66cc;">401</span><span style="color: #339933;">:</span>
-<a name="line179"></a>                <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> UnauthorizedException<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line180"></a>            <span style="color: #b1b100;">case</span> <span style="color: #cc66cc;">404</span><span style="color: #339933;">:</span>
-<a name="line181"></a>                <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> NotFoundException<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line182"></a>            <span style="color: #b1b100;">default</span><span style="color: #339933;">:</span>
-<a name="line183"></a>                <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> RequestException<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unexpected response code: '</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$info</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'http_code'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line184"></a>            <span style="color: #009900;">&#125;</span>
-<a name="line185"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line115"></a>     * @param string $id The unique ID of the user whose reports you'd like to retrieve.
+<a name="line116"></a>     * @return array An array of Report objects.
+<a name="line117"></a>     */</span>
+<a name="line118"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> getReportsForUser<span style="color: #009900;">&#40;</span><span style="color: #000088;">$id</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line119"></a>        <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doGet</span><span style="color: #009900;">&#40;</span><a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'users'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$id</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'reports'</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line120"></a>        <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">boxList</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$user</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'WG\Report'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line121"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$user</span><span style="color: #339933;">;</span>
+<a name="line122"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line123"></a>&nbsp;
+<a name="line124"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line125"></a>     * Create a new user.
+<a name="line126"></a>     *
+<a name="line127"></a>     * @param string $email
+<a name="line128"></a>     * @param string $firstname
+<a name="line129"></a>     * @param string $lastname
+<a name="line130"></a>     * @param string $password
+<a name="line131"></a>     * @param string $type Optional user type. Defaults to &lt;code&gt;analyst&lt;/code&gt;.
+<a name="line132"></a>     * @return User The newly created user object.
+<a name="line133"></a>     */</span>
+<a name="line134"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> createUser<span style="color: #009900;">&#40;</span><span style="color: #000088;">$email</span><span style="color: #339933;">,</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">,</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">,</span> <span style="color: #000088;">$password</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'analyst'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line135"></a>        <span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span>
+<a name="line136"></a>            <span style="color: #0000ff;">'email'</span>     <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$email</span><span style="color: #339933;">,</span>
+<a name="line137"></a>            <span style="color: #0000ff;">'firstname'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">,</span>
+<a name="line138"></a>            <span style="color: #0000ff;">'lastname'</span>  <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">,</span>
+<a name="line139"></a>            <span style="color: #0000ff;">'password'</span>  <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$password</span><span style="color: #339933;">,</span>
+<a name="line140"></a>            <span style="color: #0000ff;">'type'</span>      <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$type</span>
+<a name="line141"></a>        <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line142"></a>        <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doPost</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'users'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line143"></a>        <span style="color: #000088;">$user</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">box</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$user</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'WG\User'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line144"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$user</span><span style="color: #339933;">;</span>
+<a name="line145"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line146"></a>&nbsp;
+<a name="line147"></a>    <span style="color: #666666; font-style: italic;">/* -----------------------------------------------------------
+<a name="line148"></a>                        Utility methods below 
+<a name="line149"></a>       ----------------------------------------------------------- */</span>
+<a name="line150"></a>&nbsp;
+<a name="line151"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line152"></a>     * Execute a GET request
+<a name="line153"></a>     */</span>
+<a name="line154"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> doGet<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line155"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doRequest</span><span style="color: #009900;">&#40;</span>API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPGET</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line156"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line157"></a>&nbsp;
+<a name="line158"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line159"></a>     * Execute a POST request
+<a name="line160"></a>     */</span>
+<a name="line161"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> doPost<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line162"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">doRequest</span><span style="color: #009900;">&#40;</span>API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPPOST</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line163"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line164"></a>&nbsp;
+<a name="line165"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line166"></a>     * Send an API request
+<a name="line167"></a>     */</span>
+<a name="line168"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> doRequest<span style="color: #009900;">&#40;</span><span style="color: #000088;">$methodType</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #339933;">,</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$params</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line169"></a>        <span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">buildUrl</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line170"></a>&nbsp;
+<a name="line171"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$methodType</span> <span style="color: #339933;">==</span> API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPGET</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line172"></a>            <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_HTTPGET<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">TRUE</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line173"></a>        <span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$methodType</span> <span style="color: #339933;">==</span> API<span style="color: #339933;">::</span><span style="color: #000088;">$HTTPPOST</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line174"></a>            <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_POST<span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">TRUE</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line175"></a>            <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_POSTFIELDS<span style="color: #339933;">,</span> <span style="color: #000088;">$params</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line176"></a>        <span style="color: #009900;">&#125;</span> <span style="color: #b1b100;">else</span> <span style="color: #009900;">&#123;</span>
+<a name="line177"></a>            <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> Exception<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unknown $methodType'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line178"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line179"></a>        <a href="http://www.php.net/curl_setopt"><span style="color: #990000;">curl_setopt</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #339933;">,</span> CURLOPT_URL<span style="color: #339933;">,</span> <span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line180"></a>&nbsp;
+<a name="line181"></a>        <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/curl_exec"><span style="color: #990000;">curl_exec</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line182"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span> <span style="color: #339933;">===</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line183"></a>            <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> RequestException<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unexpected request error: '</span> <span style="color: #339933;">.</span> <a href="http://www.php.net/curl_error"><span style="color: #990000;">curl_error</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line184"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line185"></a>        <span style="color: #000088;">$response</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/json_decode"><span style="color: #990000;">json_decode</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$result</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
 <a name="line186"></a>&nbsp;
-<a name="line187"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$response</span><span style="color: #339933;">;</span>
-<a name="line188"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line189"></a>&nbsp;
-<a name="line190"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line191"></a>     * Builds a request URL
-<a name="line192"></a>     */</span>
-<a name="line193"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> buildUrl<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line194"></a>        <span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">urlRoot</span><span style="color: #339933;">;</span>
-<a name="line195"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$url</span><span style="color: #009900;">&#91;</span><a href="http://www.php.net/strlen"><span style="color: #990000;">strlen</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'/'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line196"></a>            <span style="color: #000088;">$url</span> <span style="color: #339933;">.=</span> <span style="color: #0000ff;">'/'</span><span style="color: #339933;">;</span>
+<a name="line187"></a>        <span style="color: #000088;">$info</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/curl_getinfo"><span style="color: #990000;">curl_getinfo</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">client</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line188"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$info</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'http_code'</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #cc66cc;">200</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line189"></a>            <span style="color: #b1b100;">switch</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$info</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'http_code'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line190"></a>            <span style="color: #b1b100;">case</span> <span style="color: #cc66cc;">401</span><span style="color: #339933;">:</span>
+<a name="line191"></a>                <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> UnauthorizedException<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line192"></a>            <span style="color: #b1b100;">case</span> <span style="color: #cc66cc;">404</span><span style="color: #339933;">:</span>
+<a name="line193"></a>                <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> NotFoundException<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line194"></a>            <span style="color: #b1b100;">default</span><span style="color: #339933;">:</span>
+<a name="line195"></a>                <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> RequestException<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Unexpected response code: '</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$info</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'http_code'</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line196"></a>            <span style="color: #009900;">&#125;</span>
 <a name="line197"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line198"></a>        <span style="color: #000088;">$url</span> <span style="color: #339933;">.=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">apiVersion</span><span style="color: #339933;">;</span>
-<a name="line199"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://www.php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line200"></a>            <span style="color: #000088;">$method</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/implode"><span style="color: #990000;">implode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line201"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line202"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'/'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line203"></a>            <span style="color: #000088;">$url</span> <span style="color: #339933;">.=</span> <span style="color: #0000ff;">'/'</span><span style="color: #339933;">;</span>
-<a name="line204"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line205"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$url</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$method</span><span style="color: #339933;">;</span>
-<a name="line206"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line207"></a>&nbsp;
-<a name="line208"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line209"></a>     * Convert a list of stdClass objects into typed objects.
-<a name="line210"></a>     *
-<a name="line211"></a>     * @param array $list A list of stdClass objects.
-<a name="line212"></a>     * @param string $type The full type name of the desired type.
-<a name="line213"></a>     * @return array An array of objects from the supplied type.
-<a name="line214"></a>     */</span>
-<a name="line215"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> boxList<span style="color: #009900;">&#40;</span><a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$list</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line216"></a>        <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line217"></a>        <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$list</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$key</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line218"></a>            <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$key</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">box</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$val</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line219"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line220"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$result</span><span style="color: #339933;">;</span>
-<a name="line221"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line222"></a>&nbsp;
-<a name="line223"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line224"></a>     * Convert a stdClass object into a typed object.
-<a name="line225"></a>     *
-<a name="line226"></a>     * @param object $orig A stdClass object.
-<a name="line227"></a>     * @param string $type The full type name of the desired type.
-<a name="line228"></a>     * @return object An object from the supplied type.
-<a name="line229"></a>     */</span>
-<a name="line230"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> box<span style="color: #009900;">&#40;</span>\stdClass <span style="color: #000088;">$orig</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line231"></a>        <span style="color: #000088;">$obj</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<a name="line232"></a>        <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$orig</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$key</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-<a name="line233"></a>            <span style="color: #000088;">$obj</span><span style="color: #339933;">-&gt;</span><span style="color: #000088;">$key</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$val</span><span style="color: #339933;">;</span>
-<a name="line234"></a>        <span style="color: #009900;">&#125;</span>
-<a name="line235"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$obj</span><span style="color: #339933;">;</span>
-<a name="line236"></a>    <span style="color: #009900;">&#125;</span>
-<a name="line237"></a><span style="color: #009900;">&#125;</span>
-<a name="line238"></a>&nbsp;</pre>
+<a name="line198"></a>&nbsp;
+<a name="line199"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$response</span><span style="color: #339933;">;</span>
+<a name="line200"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line201"></a>&nbsp;
+<a name="line202"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line203"></a>     * Builds a request URL
+<a name="line204"></a>     */</span>
+<a name="line205"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> buildUrl<span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line206"></a>        <span style="color: #000088;">$url</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">urlRoot</span><span style="color: #339933;">;</span>
+<a name="line207"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$url</span><span style="color: #009900;">&#91;</span><a href="http://www.php.net/strlen"><span style="color: #990000;">strlen</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$url</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'/'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line208"></a>            <span style="color: #000088;">$url</span> <span style="color: #339933;">.=</span> <span style="color: #0000ff;">'/'</span><span style="color: #339933;">;</span>
+<a name="line209"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line210"></a>        <span style="color: #000088;">$url</span> <span style="color: #339933;">.=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">apiVersion</span><span style="color: #339933;">;</span>
+<a name="line211"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><a href="http://www.php.net/is_array"><span style="color: #990000;">is_array</span></a><span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line212"></a>            <span style="color: #000088;">$method</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/implode"><span style="color: #990000;">implode</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$method</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line213"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line214"></a>        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$method</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">!=</span> <span style="color: #0000ff;">'/'</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line215"></a>            <span style="color: #000088;">$url</span> <span style="color: #339933;">.=</span> <span style="color: #0000ff;">'/'</span><span style="color: #339933;">;</span>
+<a name="line216"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line217"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$url</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$method</span><span style="color: #339933;">;</span>
+<a name="line218"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line219"></a>&nbsp;
+<a name="line220"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line221"></a>     * Convert a list of stdClass objects into typed objects.
+<a name="line222"></a>     *
+<a name="line223"></a>     * @param array $list A list of stdClass objects.
+<a name="line224"></a>     * @param string $type The full type name of the desired type.
+<a name="line225"></a>     * @return array An array of objects from the supplied type.
+<a name="line226"></a>     */</span>
+<a name="line227"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> boxList<span style="color: #009900;">&#40;</span><a href="http://www.php.net/array"><span style="color: #990000;">array</span></a> <span style="color: #000088;">$list</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line228"></a>        <span style="color: #000088;">$result</span> <span style="color: #339933;">=</span> <a href="http://www.php.net/array"><span style="color: #990000;">array</span></a><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line229"></a>        <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$list</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$key</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line230"></a>            <span style="color: #000088;">$result</span><span style="color: #009900;">&#91;</span><span style="color: #000088;">$key</span><span style="color: #009900;">&#93;</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">box</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$val</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line231"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line232"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$result</span><span style="color: #339933;">;</span>
+<a name="line233"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line234"></a>&nbsp;
+<a name="line235"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line236"></a>     * Convert a stdClass object into a typed object.
+<a name="line237"></a>     *
+<a name="line238"></a>     * @param object $orig A stdClass object.
+<a name="line239"></a>     * @param string $type The full type name of the desired type.
+<a name="line240"></a>     * @return object An object from the supplied type.
+<a name="line241"></a>     */</span>
+<a name="line242"></a>    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">function</span> box<span style="color: #009900;">&#40;</span>\stdClass <span style="color: #000088;">$orig</span><span style="color: #339933;">,</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line243"></a>        <span style="color: #000088;">$obj</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> <span style="color: #000088;">$type</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<a name="line244"></a>        <span style="color: #b1b100;">foreach</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$orig</span> <span style="color: #b1b100;">as</span> <span style="color: #000088;">$key</span> <span style="color: #339933;">=&gt;</span> <span style="color: #000088;">$val</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+<a name="line245"></a>            <span style="color: #000088;">$obj</span><span style="color: #339933;">-&gt;</span><span style="color: #000088;">$key</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$val</span><span style="color: #339933;">;</span>
+<a name="line246"></a>        <span style="color: #009900;">&#125;</span>
+<a name="line247"></a>        <span style="color: #b1b100;">return</span> <span style="color: #000088;">$obj</span><span style="color: #339933;">;</span>
+<a name="line248"></a>    <span style="color: #009900;">&#125;</span>
+<a name="line249"></a><span style="color: #009900;">&#125;</span>
+<a name="line250"></a>&nbsp;</pre>
 <div class="header">
 <h1>Wondergraphs PHP API</h1>
 <ul>
