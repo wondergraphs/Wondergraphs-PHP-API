@@ -32,6 +32,9 @@ require_once dirname(__FILE__) . '/Model.php';
  * This class wraps all API operations for the Wondergraphs REST API.
  */
 class API {
+    private static $HTTPGET = 0;
+    private static $HTTPPOST = 1;
+
     private $version = '$Id$';
 
     private $organization;
@@ -86,7 +89,7 @@ class API {
     /**
      * Get a list of all users in the current organization.
      *
-     * @return array An array of WG\User objects.
+     * @return array An array of User objects.
      */
     public function getUsers() {
         $users = $this->doGet('users');
@@ -97,10 +100,34 @@ class API {
     /**
      * Get a specific user.
      *
-     * @return WG\User A User object.
+     * @param string $id The unique ID of the user to retrieve.
+     * @return User A User object.
      */
     public function getUser($id) {
         $user = $this->doGet(array('users', $id));
+        $user = $this->box($user, 'WG\User');
+        return $user;
+    }
+
+    /**
+     * Create a new user.
+     *
+     * @param string $email
+     * @param string $firstname
+     * @param string $lastname
+     * @param string $password
+     * @param string $type Optional user type. Defaults to <code>analyst</code>.
+     * @return User The newly created user object.
+     */
+    public function createUser($email, $firstname, $lastname, $password, $type = 'analyst') {
+        $params = array(
+            'email'     => $email,
+            'firstname' => $firstname,
+            'lastname'  => $lastname,
+            'password'  => $password,
+            'type'      => $type
+        );
+        $user = $this->doPost('users', $params);
         $user = $this->box($user, 'WG\User');
         return $user;
     }
@@ -113,9 +140,30 @@ class API {
      * Execute a GET request
      */
     private function doGet($method) {
+        return $this->doRequest(API::$HTTPGET, $method);
+    }
+
+    /**
+     * Execute a POST request
+     */
+    private function doPost($method, array $params) {
+        return $this->doRequest(API::$HTTPPOST, $method, $params);
+    }
+
+    /**
+     * Send an API request
+     */
+    private function doRequest($methodType, $method, array $params = array()) {
         $url = $this->buildUrl($method);
 
-        curl_setopt($this->client, CURLOPT_HTTPGET, TRUE);
+        if ($methodType == API::$HTTPGET) {
+            curl_setopt($this->client, CURLOPT_HTTPGET, TRUE);
+        } else if ($methodType == API::$HTTPPOST) {
+            curl_setopt($this->client, CURLOPT_POST, TRUE);
+            curl_setopt($this->client, CURLOPT_POSTFIELDS, $params);
+        } else {
+            throw new Exception('Unknown $methodType');
+        }
         curl_setopt($this->client, CURLOPT_URL, $url);
 
         $result = curl_exec($this->client);
