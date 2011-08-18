@@ -1,0 +1,8 @@
+Operations to wrap:
+
+ * POST /reports/ID
+ * GET /reports/ID/updateStatus
+ * GET /datasets
+ * POST /datasets
+ * GET /datasets/ID
+ * GET /datasets/ID/importStatus
