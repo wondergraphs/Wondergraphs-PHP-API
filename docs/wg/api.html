@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 18 Aug 2011 08:55:20 +0000">
+<meta name="when" content="Thu, 18 Aug 2011 12:50:13 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -93,6 +93,10 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <tr>
 <td class="type"> <a href="../wg/report.html">Report</a></td>
 <td class="description"><p class="name"><a href="#getReport()">getReport</a>(string id)</p><p class="description">Get a specific report.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../wg/report.html">Report</a></td>
+<td class="description"><p class="name"><a href="#createReport()">createReport</a>(string name, string dataset, string owner)</p><p class="description">Creates a new report for a specific user.</p></td>
 </tr>
 </table>
 
@@ -206,6 +210,23 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <dd>id - The unique ID of the report to retrieve.</dd>
 <dt>Returns:</dt>
 <dd>A Report object.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line178" class="location">WG/API.php at line 178</a>
+
+<h3 id="createReport()">createReport</h3>
+<code class="signature">public  <a href="../wg/report.html">Report</a> <strong>createReport</strong>(string name, string dataset, string owner)</code>
+<div class="details">
+<p>Creates a new report for a specific user.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - The name of the report.</dd>
+<dd>dataset - The ID of the dataset on which this report will be based.</dd>
+<dd>owner - The ID of the user that will own this report.</dd>
+<dt>Returns:</dt>
+<dd>The newly created report is returned.</dd>
 </dl>
 </div>
 
