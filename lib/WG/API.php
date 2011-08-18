@@ -145,6 +145,17 @@ class API {
     }
 
     /**
+     * Retrieves a list of all reports in the organization.
+     *
+     * @return array An array of Report objects.
+     */
+    public function getReports() {
+        $reports = $this->doGet(array('reports'));
+        $reports = $this->boxList($reports, 'WG\Report');
+        return $reports;
+    }
+
+    /**
      * Get a specific report.
      *
      * @param string $id The unique ID of the report to retrieve.
