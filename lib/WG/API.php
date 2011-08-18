@@ -167,6 +167,25 @@ class API {
         return $report;
     }
 
+    /**
+     * Creates a new report for a specific user.
+     *
+     * @param string $name The name of the report.
+     * @param string $dataset The ID of the dataset on which this report will be based.
+     * @param string $owner The ID of the user that will own this report.
+     * @return Report The newly created report is returned.
+     */
+    public function createReport($name, $dataset, $owner) {
+        $params = array(
+            'name' => $name,
+            'datasetId' => $dataset,
+            'owner' => $owner
+        );
+        $report = $this->doPost('reports', $params);
+        $report = $this->box($report, 'WG\Report');
+        return $report;
+    }
+
     /* -----------------------------------------------------------
                         Utility methods below 
        ----------------------------------------------------------- */
