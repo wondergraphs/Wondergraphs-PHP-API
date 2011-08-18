@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 04 Aug 2011 13:41:05 +0000">
+<meta name="when" content="Thu, 18 Aug 2011 08:55:20 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -85,6 +85,10 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <tr>
 <td class="type"> <a href="../wg/user.html">User</a></td>
 <td class="description"><p class="name"><a href="#createUser()">createUser</a>(string email, string firstname, string lastname, string password, string type)</p><p class="description">Create a new user.</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getReports()">getReports</a>()</p><p class="description">Retrieves a list of all reports in the organization.</p></td>
 </tr>
 <tr>
 <td class="type"> <a href="../wg/report.html">Report</a></td>
@@ -179,7 +183,20 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line153" class="location">WG/API.php at line 153</a>
+<a href="../source/wg/api.php.html#line152" class="location">WG/API.php at line 152</a>
+
+<h3 id="getReports()">getReports</h3>
+<code class="signature">public  array <strong>getReports</strong>()</code>
+<div class="details">
+<p>Retrieves a list of all reports in the organization.</p><dl>
+<dt>Returns:</dt>
+<dd>An array of Report objects.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line164" class="location">WG/API.php at line 164</a>
 
 <h3 id="getReport()">getReport</h3>
 <code class="signature">public  <a href="../wg/report.html">Report</a> <strong>getReport</strong>(string id)</code>
