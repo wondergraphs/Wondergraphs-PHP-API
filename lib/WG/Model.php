@@ -26,6 +26,48 @@ THE SOFTWARE.
 namespace WG;
 
 /**
+ * Dataset resource.
+ *
+ * A dataset represents one data file that is imported.
+ */
+class Dataset {
+    /**
+     * A unique string identifier for the object.
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
+     * A universally unique identifier. This is used to generate the URL that points to the source data.
+     *
+     * @var string
+     */
+    public $uuid;
+
+    /**
+     * The name of the dataset.
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * A timestamp indicating when this dataset was first created.
+     *
+     * @var string
+     */
+    public $creationDate;
+
+    /**
+     * The ID of the user that owns this dataset.
+     *
+     * @var string
+     */
+    public $owner;
+}
+
+/**
  * A user resource.
  */
 class User {
@@ -34,28 +76,28 @@ class User {
      *
      * @var string
      */
-    public $id; 
+    public $id;
 
     /**
      * The e-mail address of the user, which is used to log in.
      *
      * @var string
      */
-    public $email; 
+    public $email;
 
     /**
      * First name of the user.
      *
      * @var string
      */
-    public $firstname; 
+    public $firstname;
 
     /**
      * Last name of the user.
      *
      * @var string
      */
-    public $lastname; 
+    public $lastname;
 
     /**
      * Timezone identifier.
@@ -63,7 +105,7 @@ class User {
      * A full list can be found in the TZ column at <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia</a>.
      * @var string
      */
-    public $timeZoneId; 
+    public $timeZoneId;
 
     /**
      * User type.
@@ -71,14 +113,14 @@ class User {
      * This should be any of "administrator", "analyst" or "viewer".
      * @var string
      */
-    public $type; 
+    public $type;
 
     /**
      * Whether or not this account is enabled.
      *
      * @var boolean
      */
-    public $active; 
+    public $active;
 }
 
 /**
@@ -90,26 +132,26 @@ class Report {
      *
      * @var string
      */
-    public $id; 
+    public $id;
 
     /**
      * The name of the report.
      *
      * @var string
      */
-    public $name; 
+    public $name;
 
     /**
      * The ID of the dataset on which this report is based.
      *
      * @var string
      */
-    public $datasetId; 
+    public $datasetId;
 
     /**
      * The ID of the user that created this report.
      *
      * @var string
      */
-    public $owner; 
+    public $owner;
 }
