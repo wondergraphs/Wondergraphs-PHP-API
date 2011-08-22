@@ -186,6 +186,17 @@ class API {
         return $report;
     }
 
+    /**
+     * Retrieves a list of all datasets in the organization.
+     *
+     * @return array An array of Dataset objects.
+     */
+    public function getDatasets() {
+        $datasets = $this->doGet(array('datasets'));
+        $datasets = $this->boxList($datasets, 'WG\Dataset');
+        return $datasets;
+    }
+
     /* -----------------------------------------------------------
                         Utility methods below 
        ----------------------------------------------------------- */
