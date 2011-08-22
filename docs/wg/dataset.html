@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
 
-<title>Report (Wondergraphs PHP API)</title>
+<title>Dataset (Wondergraphs PHP API)</title>
 
 </head>
 <body id="definition" onload="parent.document.title=document.title;">
@@ -32,7 +32,7 @@
 
 <div class="small_links">
 <a href="../index.html" target="_top">Frames</a>
-<a href="../wg/report.html" target="_top">No frames</a>
+<a href="../wg/dataset.html" target="_top">No frames</a>
 </div>
 <div class="small_links">
 Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>
@@ -40,18 +40,18 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </div>
 <hr>
 
-<div class="qualifiedName">WG\Report</div>
-<a href="../source/wg/model.php.html#line129" class="location">WG/Model.php at line 129</a>
+<div class="qualifiedName">WG\Dataset</div>
+<a href="../source/wg/model.php.html#line33" class="location">WG/Model.php at line 33</a>
 
-<h1>Class Report</h1>
+<h1>Class Dataset</h1>
 
-<pre class="tree"><strong>Report</strong><br /></pre>
+<pre class="tree"><strong>Dataset</strong><br /></pre>
 
 <hr>
 
-<p class="signature">public  class <strong>Report</strong></p>
+<p class="signature">public  class <strong>Dataset</strong></p>
 
-<div class="comment" id="overview_description"><p>Report resource.</p></div>
+<div class="comment" id="overview_description"><p>Dataset resource.</p><p>A dataset represents one data file that is imported.</p></div>
 
 <hr>
 
@@ -59,7 +59,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <tr><th colspan="2">Field Summary</th></tr>
 <tr>
 <td class="type"> string</td>
-<td class="description"><p class="name"><a href="#datasetId">$datasetId</a></p><p class="description">The ID of the dataset on which this report is based.</p></td>
+<td class="description"><p class="name"><a href="#creationDate">$creationDate</a></p><p class="description">A timestamp indicating when this dataset was first created.</p></td>
 </tr>
 <tr>
 <td class="type"> string</td>
@@ -67,48 +67,61 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </tr>
 <tr>
 <td class="type"> string</td>
-<td class="description"><p class="name"><a href="#name">$name</a></p><p class="description">The name of the report.</p></td>
+<td class="description"><p class="name"><a href="#name">$name</a></p><p class="description">The name of the dataset.</p></td>
 </tr>
 <tr>
 <td class="type"> string</td>
-<td class="description"><p class="name"><a href="#owner">$owner</a></p><p class="description">The ID of the user that created this report.</p></td>
+<td class="description"><p class="name"><a href="#owner">$owner</a></p><p class="description">The ID of the user that owns this dataset.</p></td>
+</tr>
+<tr>
+<td class="type"> string</td>
+<td class="description"><p class="name"><a href="#uuid">$uuid</a></p><p class="description">A universally unique identifier. </p></td>
 </tr>
 </table>
 
 <h2 id="detail_field">Field Detail</h2>
-<a href="../source/wg/model.php.html#line149" class="location">WG/Model.php at line 149</a>
+<a href="../source/wg/model.php.html#line60" class="location">WG/Model.php at line 60</a>
 
-<h3 id="datasetId">datasetId</h3>
-<code class="signature">public  string <strong>$datasetId</strong></code>
+<h3 id="creationDate">creationDate</h3>
+<code class="signature">public  string <strong>$creationDate</strong></code>
 <div class="details">
-<p>The ID of the dataset on which this report is based.</p></div>
+<p>A timestamp indicating when this dataset was first created.</p></div>
 
 <hr>
 
-<a href="../source/wg/model.php.html#line135" class="location">WG/Model.php at line 135</a>
+<a href="../source/wg/model.php.html#line39" class="location">WG/Model.php at line 39</a>
 
 <h3 id="id">id</h3>
-<code class="signature">public  string <strong>$id</strong></code>
+<code class="signature">public  string <strong>$id</strong> = 'analyst'</code>
 <div class="details">
 <p>A unique string identifier for the object.</p></div>
 
 <hr>
 
-<a href="../source/wg/model.php.html#line142" class="location">WG/Model.php at line 142</a>
+<a href="../source/wg/model.php.html#line53" class="location">WG/Model.php at line 53</a>
 
 <h3 id="name">name</h3>
 <code class="signature">public  string <strong>$name</strong></code>
 <div class="details">
-<p>The name of the report.</p></div>
+<p>The name of the dataset.</p></div>
 
 <hr>
 
-<a href="../source/wg/model.php.html#line156" class="location">WG/Model.php at line 156</a>
+<a href="../source/wg/model.php.html#line67" class="location">WG/Model.php at line 67</a>
 
 <h3 id="owner">owner</h3>
 <code class="signature">public  string <strong>$owner</strong></code>
 <div class="details">
-<p>The ID of the user that created this report.</p></div>
+<p>The ID of the user that owns this dataset.</p></div>
+
+<hr>
+
+<a href="../source/wg/model.php.html#line46" class="location">WG/Model.php at line 46</a>
+
+<h3 id="uuid">uuid</h3>
+<code class="signature">public  string <strong>$uuid</strong></code>
+<div class="details">
+<p>A universally unique identifier. This is used to generate the URL that points to the source data.</p></div>
 
 <hr>
 
@@ -128,7 +141,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <div class="small_links">
 <a href="../index.html" target="_top">Frames</a>
-<a href="../wg/report.html" target="_top">No frames</a>
+<a href="../wg/dataset.html" target="_top">No frames</a>
 </div>
 <div class="small_links">
 Summary: <a href="#summary_field">Field</a> | <a href="#summary_method">Method</a> | <a href="#summary_constr">Constr</a>

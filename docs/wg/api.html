@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 18 Aug 2011 12:50:13 +0000">
+<meta name="when" content="Mon, 22 Aug 2011 14:49:16 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -97,6 +97,10 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <tr>
 <td class="type"> <a href="../wg/report.html">Report</a></td>
 <td class="description"><p class="name"><a href="#createReport()">createReport</a>(string name, string dataset, string owner)</p><p class="description">Creates a new report for a specific user.</p></td>
+</tr>
+<tr>
+<td class="type"> array</td>
+<td class="description"><p class="name"><a href="#getDatasets()">getDatasets</a>()</p><p class="description">Retrieves a list of all datasets in the organization.</p></td>
 </tr>
 </table>
 
@@ -227,6 +231,19 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <dd>owner - The ID of the user that will own this report.</dd>
 <dt>Returns:</dt>
 <dd>The newly created report is returned.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line194" class="location">WG/API.php at line 194</a>
+
+<h3 id="getDatasets()">getDatasets</h3>
+<code class="signature">public  array <strong>getDatasets</strong>()</code>
+<div class="details">
+<p>Retrieves a list of all datasets in the organization.</p><dl>
+<dt>Returns:</dt>
+<dd>An array of Dataset objects.</dd>
 </dl>
 </div>
 

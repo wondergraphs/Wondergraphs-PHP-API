@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Thu, 18 Aug 2011 12:50:13 +0000">
+<meta name="when" content="Mon, 22 Aug 2011 14:49:16 +0000">
 
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
 <link rel="start" href="../../overview-summary.html">
@@ -64,94 +64,136 @@
 <a name="line26"></a><span style="color: #000000; font-weight: bold;">namespace</span> WG<span style="color: #339933;">;</span>
 <a name="line27"></a>&nbsp;
 <a name="line28"></a><span style="color: #009933; font-style: italic;">/**
-<a name="line29"></a> * A user resource.
-<a name="line30"></a> */</span>
-<a name="line31"></a><span style="color: #000000; font-weight: bold;">class</span> User <span style="color: #009900;">&#123;</span>
-<a name="line32"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line33"></a>     * A unique string identifier for the object.
-<a name="line34"></a>     *
-<a name="line35"></a>     * @var string
-<a name="line36"></a>     */</span>
-<a name="line37"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span> 
-<a name="line38"></a>&nbsp;
-<a name="line39"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line40"></a>     * The e-mail address of the user, which is used to log in.
-<a name="line41"></a>     *
-<a name="line42"></a>     * @var string
-<a name="line43"></a>     */</span>
-<a name="line44"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$email</span><span style="color: #339933;">;</span> 
-<a name="line45"></a>&nbsp;
-<a name="line46"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line47"></a>     * First name of the user.
-<a name="line48"></a>     *
-<a name="line49"></a>     * @var string
-<a name="line50"></a>     */</span>
-<a name="line51"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">;</span> 
-<a name="line52"></a>&nbsp;
-<a name="line53"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line54"></a>     * Last name of the user.
-<a name="line55"></a>     *
-<a name="line56"></a>     * @var string
-<a name="line57"></a>     */</span>
-<a name="line58"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">;</span> 
-<a name="line59"></a>&nbsp;
-<a name="line60"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line61"></a>     * Timezone identifier.
-<a name="line62"></a>     *
-<a name="line63"></a>     * A full list can be found in the TZ column at &lt;a href=&quot;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&quot;&gt;Wikipedia&lt;/a&gt;.
-<a name="line64"></a>     * @var string
-<a name="line65"></a>     */</span>
-<a name="line66"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$timeZoneId</span><span style="color: #339933;">;</span> 
-<a name="line67"></a>&nbsp;
-<a name="line68"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line69"></a>     * User type.
-<a name="line70"></a>     *
-<a name="line71"></a>     * This should be any of &quot;administrator&quot;, &quot;analyst&quot; or &quot;viewer&quot;.
-<a name="line72"></a>     * @var string
-<a name="line73"></a>     */</span>
-<a name="line74"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$type</span><span style="color: #339933;">;</span> 
-<a name="line75"></a>&nbsp;
-<a name="line76"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line77"></a>     * Whether or not this account is enabled.
-<a name="line78"></a>     *
-<a name="line79"></a>     * @var boolean
-<a name="line80"></a>     */</span>
-<a name="line81"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$active</span><span style="color: #339933;">;</span> 
-<a name="line82"></a><span style="color: #009900;">&#125;</span>
-<a name="line83"></a>&nbsp;
-<a name="line84"></a><span style="color: #009933; font-style: italic;">/**
-<a name="line85"></a> * Report resource.
-<a name="line86"></a> */</span>
-<a name="line87"></a><span style="color: #000000; font-weight: bold;">class</span> Report <span style="color: #009900;">&#123;</span>
+<a name="line29"></a> * Dataset resource.
+<a name="line30"></a> *
+<a name="line31"></a> * A dataset represents one data file that is imported.
+<a name="line32"></a> */</span>
+<a name="line33"></a><span style="color: #000000; font-weight: bold;">class</span> Dataset <span style="color: #009900;">&#123;</span>
+<a name="line34"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line35"></a>     * A unique string identifier for the object.
+<a name="line36"></a>     *
+<a name="line37"></a>     * @var string
+<a name="line38"></a>     */</span>
+<a name="line39"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span>
+<a name="line40"></a>&nbsp;
+<a name="line41"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line42"></a>     * A universally unique identifier. This is used to generate the URL that points to the source data.
+<a name="line43"></a>     *
+<a name="line44"></a>     * @var string
+<a name="line45"></a>     */</span>
+<a name="line46"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$uuid</span><span style="color: #339933;">;</span>
+<a name="line47"></a>&nbsp;
+<a name="line48"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line49"></a>     * The name of the dataset.
+<a name="line50"></a>     *
+<a name="line51"></a>     * @var string
+<a name="line52"></a>     */</span>
+<a name="line53"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$name</span><span style="color: #339933;">;</span>
+<a name="line54"></a>&nbsp;
+<a name="line55"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line56"></a>     * A timestamp indicating when this dataset was first created.
+<a name="line57"></a>     *
+<a name="line58"></a>     * @var string
+<a name="line59"></a>     */</span>
+<a name="line60"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$creationDate</span><span style="color: #339933;">;</span>
+<a name="line61"></a>&nbsp;
+<a name="line62"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line63"></a>     * The ID of the user that owns this dataset.
+<a name="line64"></a>     *
+<a name="line65"></a>     * @var string
+<a name="line66"></a>     */</span>
+<a name="line67"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$owner</span><span style="color: #339933;">;</span>
+<a name="line68"></a><span style="color: #009900;">&#125;</span>
+<a name="line69"></a>&nbsp;
+<a name="line70"></a><span style="color: #009933; font-style: italic;">/**
+<a name="line71"></a> * A user resource.
+<a name="line72"></a> */</span>
+<a name="line73"></a><span style="color: #000000; font-weight: bold;">class</span> User <span style="color: #009900;">&#123;</span>
+<a name="line74"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line75"></a>     * A unique string identifier for the object.
+<a name="line76"></a>     *
+<a name="line77"></a>     * @var string
+<a name="line78"></a>     */</span>
+<a name="line79"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span>
+<a name="line80"></a>&nbsp;
+<a name="line81"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line82"></a>     * The e-mail address of the user, which is used to log in.
+<a name="line83"></a>     *
+<a name="line84"></a>     * @var string
+<a name="line85"></a>     */</span>
+<a name="line86"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$email</span><span style="color: #339933;">;</span>
+<a name="line87"></a>&nbsp;
 <a name="line88"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line89"></a>     * A unique string identifier for the object.
+<a name="line89"></a>     * First name of the user.
 <a name="line90"></a>     *
 <a name="line91"></a>     * @var string
 <a name="line92"></a>     */</span>
-<a name="line93"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span> 
+<a name="line93"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$firstname</span><span style="color: #339933;">;</span>
 <a name="line94"></a>&nbsp;
 <a name="line95"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line96"></a>     * The name of the report.
+<a name="line96"></a>     * Last name of the user.
 <a name="line97"></a>     *
 <a name="line98"></a>     * @var string
 <a name="line99"></a>     */</span>
-<a name="line100"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$name</span><span style="color: #339933;">;</span> 
+<a name="line100"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$lastname</span><span style="color: #339933;">;</span>
 <a name="line101"></a>&nbsp;
 <a name="line102"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line103"></a>     * The ID of the dataset on which this report is based.
+<a name="line103"></a>     * Timezone identifier.
 <a name="line104"></a>     *
-<a name="line105"></a>     * @var string
-<a name="line106"></a>     */</span>
-<a name="line107"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$datasetId</span><span style="color: #339933;">;</span> 
-<a name="line108"></a>&nbsp;
-<a name="line109"></a>    <span style="color: #009933; font-style: italic;">/**
-<a name="line110"></a>     * The ID of the user that created this report.
-<a name="line111"></a>     *
-<a name="line112"></a>     * @var string
-<a name="line113"></a>     */</span>
-<a name="line114"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$owner</span><span style="color: #339933;">;</span> 
-<a name="line115"></a><span style="color: #009900;">&#125;</span>
-<a name="line116"></a>&nbsp;</pre>
+<a name="line105"></a>     * A full list can be found in the TZ column at &lt;a href=&quot;http://en.wikipedia.org/wiki/List_of_tz_database_time_zones&quot;&gt;Wikipedia&lt;/a&gt;.
+<a name="line106"></a>     * @var string
+<a name="line107"></a>     */</span>
+<a name="line108"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$timeZoneId</span><span style="color: #339933;">;</span>
+<a name="line109"></a>&nbsp;
+<a name="line110"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line111"></a>     * User type.
+<a name="line112"></a>     *
+<a name="line113"></a>     * This should be any of &quot;administrator&quot;, &quot;analyst&quot; or &quot;viewer&quot;.
+<a name="line114"></a>     * @var string
+<a name="line115"></a>     */</span>
+<a name="line116"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$type</span><span style="color: #339933;">;</span>
+<a name="line117"></a>&nbsp;
+<a name="line118"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line119"></a>     * Whether or not this account is enabled.
+<a name="line120"></a>     *
+<a name="line121"></a>     * @var boolean
+<a name="line122"></a>     */</span>
+<a name="line123"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$active</span><span style="color: #339933;">;</span>
+<a name="line124"></a><span style="color: #009900;">&#125;</span>
+<a name="line125"></a>&nbsp;
+<a name="line126"></a><span style="color: #009933; font-style: italic;">/**
+<a name="line127"></a> * Report resource.
+<a name="line128"></a> */</span>
+<a name="line129"></a><span style="color: #000000; font-weight: bold;">class</span> Report <span style="color: #009900;">&#123;</span>
+<a name="line130"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line131"></a>     * A unique string identifier for the object.
+<a name="line132"></a>     *
+<a name="line133"></a>     * @var string
+<a name="line134"></a>     */</span>
+<a name="line135"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$id</span><span style="color: #339933;">;</span>
+<a name="line136"></a>&nbsp;
+<a name="line137"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line138"></a>     * The name of the report.
+<a name="line139"></a>     *
+<a name="line140"></a>     * @var string
+<a name="line141"></a>     */</span>
+<a name="line142"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$name</span><span style="color: #339933;">;</span>
+<a name="line143"></a>&nbsp;
+<a name="line144"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line145"></a>     * The ID of the dataset on which this report is based.
+<a name="line146"></a>     *
+<a name="line147"></a>     * @var string
+<a name="line148"></a>     */</span>
+<a name="line149"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$datasetId</span><span style="color: #339933;">;</span>
+<a name="line150"></a>&nbsp;
+<a name="line151"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line152"></a>     * The ID of the user that created this report.
+<a name="line153"></a>     *
+<a name="line154"></a>     * @var string
+<a name="line155"></a>     */</span>
+<a name="line156"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$owner</span><span style="color: #339933;">;</span>
+<a name="line157"></a><span style="color: #009900;">&#125;</span>
+<a name="line158"></a>&nbsp;</pre>
 <div class="header">
 <h1>Wondergraphs PHP API</h1>
 <ul>
