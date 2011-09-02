@@ -187,17 +187,6 @@ class API {
     }
 
     /**
-     * Retrieves a list of all datasets in the organization.
-     *
-     * @return array An array of Dataset objects.
-     */
-    public function getDatasets() {
-        $datasets = $this->doGet(array('datasets'));
-        $datasets = $this->boxList($datasets, 'WG\Dataset');
-        return $datasets;
-    }
-
-    /**
      * Change the name of a report.
      *
      * Warning: This operation is not available yet.
@@ -220,13 +209,36 @@ class API {
      *
      * A new update is triggered when the dataset behind a report is changed.
      *
-     * @param int $id The ID of the report to retrieve the update status from.
+     * @param string $id The ID of the report to retrieve the update status from.
      * @return UpdateStatus An update status object.
      */
     public function getUpdateStatus($id) {
         $status = $this->doGet(array('reports', $id, 'updateStatus'));
         $status = $this->box($status, 'WG\UpdateStatus');
         return $status;
+    }
+
+    /**
+     * Retrieves a list of all datasets in the organization.
+     *
+     * @return array An array of Dataset objects.
+     */
+    public function getDatasets() {
+        $datasets = $this->doGet(array('datasets'));
+        $datasets = $this->boxList($datasets, 'WG\Dataset');
+        return $datasets;
+    }
+
+    /**
+     * Retrieve a specific dataset.
+     *
+     * @param string $id The dataset ID.
+     * @return Dataset The requested dataset.
+     */
+    public function getDataset($id) {
+        $dataset = $this->doGet(array('datasets', $id));
+        $dataset = $this->box($dataset, 'WG\Dataset');
+        return $dataset;
     }
 
     /* -----------------------------------------------------------
