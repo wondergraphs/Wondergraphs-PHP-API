@@ -189,10 +189,18 @@ class API {
     /**
      * Change the name of a report.
      *
-     * Warning: This operation is not available yet.
+     * @param string $id The ID of the report to update.
+     * @param string $name The new name of the report.
+     * @return Report The modified report is returned.
      */
     public function updateReportName($id, $name) {
-        throw new \Exception('Not implemented yet!');
+        $params = array(
+            'name' => $name
+        );
+
+        $report = $this->doPost(array('reports', $id), $params);
+        $report = $this->box($report, 'WG\Report');
+        return $report;
     }
 
     /**
