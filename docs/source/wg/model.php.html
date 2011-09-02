@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Mon, 22 Aug 2011 14:49:16 +0000">
+<meta name="when" content="Fri, 02 Sep 2011 13:49:00 +0000">
 
 <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
 <link rel="start" href="../../overview-summary.html">
@@ -193,7 +193,54 @@
 <a name="line155"></a>     */</span>
 <a name="line156"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$owner</span><span style="color: #339933;">;</span>
 <a name="line157"></a><span style="color: #009900;">&#125;</span>
-<a name="line158"></a>&nbsp;</pre>
+<a name="line158"></a>&nbsp;
+<a name="line159"></a><span style="color: #009933; font-style: italic;">/**
+<a name="line160"></a> * Update status.
+<a name="line161"></a> */</span>
+<a name="line162"></a><span style="color: #000000; font-weight: bold;">class</span> UpdateStatus <span style="color: #009900;">&#123;</span>
+<a name="line163"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line164"></a>     * Date when the update operation was requested.
+<a name="line165"></a>     *
+<a name="line166"></a>     * @var string
+<a name="line167"></a>     */</span>
+<a name="line168"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$insertedOn</span><span style="color: #339933;">;</span>
+<a name="line169"></a>&nbsp;
+<a name="line170"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line171"></a>     * Date when the update operation was started.
+<a name="line172"></a>     *
+<a name="line173"></a>     * @var string
+<a name="line174"></a>     */</span>
+<a name="line175"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$startedOn</span><span style="color: #339933;">;</span>
+<a name="line176"></a>&nbsp;
+<a name="line177"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line178"></a>     * Date when the update operation was finished.
+<a name="line179"></a>     *
+<a name="line180"></a>     * @var string
+<a name="line181"></a>     */</span>
+<a name="line182"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$finishedOn</span><span style="color: #339933;">;</span>
+<a name="line183"></a>&nbsp;
+<a name="line184"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line185"></a>     * Whether or not the operation has failed.
+<a name="line186"></a>     *
+<a name="line187"></a>     * @var boolean
+<a name="line188"></a>     */</span>
+<a name="line189"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$hasFailed</span><span style="color: #339933;">;</span>
+<a name="line190"></a>&nbsp;
+<a name="line191"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line192"></a>     * Progress indicator.
+<a name="line193"></a>     *
+<a name="line194"></a>     * @var int
+<a name="line195"></a>     */</span>
+<a name="line196"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$progress</span><span style="color: #339933;">;</span>
+<a name="line197"></a>&nbsp;
+<a name="line198"></a>    <span style="color: #009933; font-style: italic;">/**
+<a name="line199"></a>     * Status message.
+<a name="line200"></a>     *
+<a name="line201"></a>     * @var string
+<a name="line202"></a>     */</span>
+<a name="line203"></a>    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$message</span><span style="color: #339933;">;</span>
+<a name="line204"></a><span style="color: #009900;">&#125;</span>
+<a name="line205"></a>&nbsp;</pre>
 <div class="header">
 <h1>Wondergraphs PHP API</h1>
 <ul>

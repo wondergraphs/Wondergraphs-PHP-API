@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Mon, 22 Aug 2011 14:49:16 +0000">
+<meta name="when" content="Fri, 02 Sep 2011 13:49:00 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -99,8 +99,27 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#createReport()">createReport</a>(string name, string dataset, string owner)</p><p class="description">Creates a new report for a specific user.</p></td>
 </tr>
 <tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#updateReportName()">updateReportName</a>(mixed id, mixed name)</p><p class="description">Change the name of a report.
+</p></td>
+</tr>
+<tr>
+<td class="type"> void</td>
+<td class="description"><p class="name"><a href="#updateReportData()">updateReportData</a>(mixed id, mixed datasetId)</p><p class="description">Change the dataset of a report.
+</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../wg/updatestatus.html">UpdateStatus</a></td>
+<td class="description"><p class="name"><a href="#getUpdateStatus()">getUpdateStatus</a>(string id)</p><p class="description">Retrieve the update status of a report.
+</p></td>
+</tr>
+<tr>
 <td class="type"> array</td>
 <td class="description"><p class="name"><a href="#getDatasets()">getDatasets</a>()</p><p class="description">Retrieves a list of all datasets in the organization.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../wg/dataset.html">Dataset</a></td>
+<td class="description"><p class="name"><a href="#getDataset()">getDataset</a>(string id)</p><p class="description">Retrieve a specific dataset.</p></td>
 </tr>
 </table>
 
@@ -238,12 +257,60 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <a href="../source/wg/api.php.html#line194" class="location">WG/API.php at line 194</a>
 
+<h3 id="updateReportName()">updateReportName</h3>
+<code class="signature">public  void <strong>updateReportName</strong>(mixed id, mixed name)</code>
+<div class="details">
+<p>Change the name of a report.</p><p>Warning: This operation is not available yet.</p></div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line203" class="location">WG/API.php at line 203</a>
+
+<h3 id="updateReportData()">updateReportData</h3>
+<code class="signature">public  void <strong>updateReportData</strong>(mixed id, mixed datasetId)</code>
+<div class="details">
+<p>Change the dataset of a report.</p><p>Warning: This operation is not available yet.</p></div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line215" class="location">WG/API.php at line 215</a>
+
+<h3 id="getUpdateStatus()">getUpdateStatus</h3>
+<code class="signature">public  <a href="../wg/updatestatus.html">UpdateStatus</a> <strong>getUpdateStatus</strong>(string id)</code>
+<div class="details">
+<p>Retrieve the update status of a report.</p><p>A new update is triggered when the dataset behind a report is changed.</p><dl>
+<dt>Parameters:</dt>
+<dd>id - The ID of the report to retrieve the update status from.</dd>
+<dt>Returns:</dt>
+<dd>An update status object.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line226" class="location">WG/API.php at line 226</a>
+
 <h3 id="getDatasets()">getDatasets</h3>
 <code class="signature">public  array <strong>getDatasets</strong>()</code>
 <div class="details">
 <p>Retrieves a list of all datasets in the organization.</p><dl>
 <dt>Returns:</dt>
 <dd>An array of Dataset objects.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line238" class="location">WG/API.php at line 238</a>
+
+<h3 id="getDataset()">getDataset</h3>
+<code class="signature">public  <a href="../wg/dataset.html">Dataset</a> <strong>getDataset</strong>(string id)</code>
+<div class="details">
+<p>Retrieve a specific dataset.</p><dl>
+<dt>Parameters:</dt>
+<dd>id - The dataset ID.</dd>
+<dt>Returns:</dt>
+<dd>The requested dataset.</dd>
 </dl>
 </div>
 
