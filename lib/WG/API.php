@@ -239,7 +239,7 @@ class API {
      *
      * @param string $name The name of the dataset.
      * @param string $owner The ID of the users that will own this dataset.
-     * @param string $file The filename of the file to be uploaded, or the contents of the file.
+     * @param string $filename The filename of the file to be uploaded, or the contents of the file.
      * @param boolean $isFileName When true, the $file argument will be treated as a filename, otherwise it will be treated as the content of the CSV file itself.
      * @return Dataset A newly created dataset object.
      */
