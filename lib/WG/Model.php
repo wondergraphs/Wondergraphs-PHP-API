@@ -157,25 +157,25 @@ class Report {
 }
 
 /**
- * Update status.
+ * Operation status.
  */
-class UpdateStatus {
+class OperationStatus {
     /**
-     * Date when the update operation was requested.
+     * Date when the operation was requested.
      *
      * @var string
      */
     public $insertedOn;
 
     /**
-     * Date when the update operation was started.
+     * Date when the operation was started.
      *
      * @var string
      */
     public $startedOn;
 
     /**
-     * Date when the update operation was finished.
+     * Date when the operation was finished.
      *
      * @var string
      */

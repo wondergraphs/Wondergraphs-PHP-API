@@ -210,11 +210,11 @@ class API {
      * A new update is triggered when the dataset behind a report is changed.
      *
      * @param string $id The ID of the report to retrieve the update status from.
-     * @return UpdateStatus An update status object.
+     * @return OperationStatus A status object.
      */
     public function getUpdateStatus($id) {
         $status = $this->doGet(array('reports', $id, 'updateStatus'));
-        $status = $this->box($status, 'WG\UpdateStatus');
+        $status = $this->box($status, 'WG\OperationStatus');
         return $status;
     }
 
@@ -270,6 +270,18 @@ class API {
         $dataset = $this->doGet(array('datasets', $id));
         $dataset = $this->box($dataset, 'WG\Dataset');
         return $dataset;
+    }
+
+    /**
+     * Retrieve the import status of a specific dataset.
+     *
+     * @param string $id The ID of the dataset to retrieve the import status for.
+     * @return OperationStatus A status object.
+     */
+    public function getImportStatus($id) {
+        $status = $this->doGet(array('datasets', $id, 'importStatus'));
+        $status = $this->box($status, 'WG\OperationStatus');
+        return $status;
     }
 
     /* -----------------------------------------------------------
