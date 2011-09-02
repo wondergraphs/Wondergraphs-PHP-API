@@ -155,3 +155,50 @@ class Report {
      */
     public $owner;
 }
+
+/**
+ * Update status.
+ */
+class UpdateStatus {
+    /**
+     * Date when the update operation was requested.
+     *
+     * @var string
+     */
+    public $insertedOn;
+
+    /**
+     * Date when the update operation was started.
+     *
+     * @var string
+     */
+    public $startedOn;
+
+    /**
+     * Date when the update operation was finished.
+     *
+     * @var string
+     */
+    public $finishedOn;
+
+    /**
+     * Whether or not the operation has failed.
+     *
+     * @var boolean
+     */
+    public $hasFailed;
+
+    /**
+     * Progress indicator.
+     *
+     * @var int
+     */
+    public $progress;
+
+    /**
+     * Status message.
+     *
+     * @var string
+     */
+    public $message;
+}

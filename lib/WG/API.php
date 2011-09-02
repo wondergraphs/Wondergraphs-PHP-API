@@ -197,6 +197,38 @@ class API {
         return $datasets;
     }
 
+    /**
+     * Change the name of a report.
+     *
+     * Warning: This operation is not available yet.
+     */
+    public function updateReportName($id, $name) {
+        throw new Exception('Not implemented yet!');
+    }
+
+    /**
+     * Change the dataset of a report.
+     *
+     * Warning: This operation is not available yet.
+     */
+    public function updateReportData($id, $datasetId) {
+        throw new Exception('Not implemented yet!');
+    }
+
+    /**
+     * Retrieve the update status of a report.
+     *
+     * A new update is triggered when the dataset behind a report is changed.
+     *
+     * @param int $id The ID of the report to retrieve the update status from.
+     * @return UpdateStatus An update status object.
+     */
+    public function getUpdateStatus($id) {
+        $status = $this->doGet(array('reports', $id, 'updateStatus'));
+        $status = $this->box($status, 'WG\UpdateStatus');
+        return $status;
+    }
+
     /* -----------------------------------------------------------
                         Utility methods below 
        ----------------------------------------------------------- */
