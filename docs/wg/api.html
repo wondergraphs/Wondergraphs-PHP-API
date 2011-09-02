@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Fri, 02 Sep 2011 13:49:00 +0000">
+<meta name="when" content="Fri, 02 Sep 2011 14:25:22 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -109,7 +109,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </p></td>
 </tr>
 <tr>
-<td class="type"> <a href="../wg/updatestatus.html">UpdateStatus</a></td>
+<td class="type"> <a href="../wg/operationstatus.html">OperationStatus</a></td>
 <td class="description"><p class="name"><a href="#getUpdateStatus()">getUpdateStatus</a>(string id)</p><p class="description">Retrieve the update status of a report.
 </p></td>
 </tr>
@@ -119,7 +119,16 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 </tr>
 <tr>
 <td class="type"> <a href="../wg/dataset.html">Dataset</a></td>
+<td class="description"><p class="name"><a href="#createDataset()">createDataset</a>(string name, string owner, string file, boolean isFileName, mixed filename)</p><p class="description">Creates a new dataset for a specific user.
+</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../wg/dataset.html">Dataset</a></td>
 <td class="description"><p class="name"><a href="#getDataset()">getDataset</a>(string id)</p><p class="description">Retrieve a specific dataset.</p></td>
+</tr>
+<tr>
+<td class="type"> <a href="../wg/operationstatus.html">OperationStatus</a></td>
+<td class="description"><p class="name"><a href="#getImportStatus()">getImportStatus</a>(string id)</p><p class="description">Retrieve the import status of a specific dataset.</p></td>
 </tr>
 </table>
 
@@ -276,13 +285,13 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <a href="../source/wg/api.php.html#line215" class="location">WG/API.php at line 215</a>
 
 <h3 id="getUpdateStatus()">getUpdateStatus</h3>
-<code class="signature">public  <a href="../wg/updatestatus.html">UpdateStatus</a> <strong>getUpdateStatus</strong>(string id)</code>
+<code class="signature">public  <a href="../wg/operationstatus.html">OperationStatus</a> <strong>getUpdateStatus</strong>(string id)</code>
 <div class="details">
 <p>Retrieve the update status of a report.</p><p>A new update is triggered when the dataset behind a report is changed.</p><dl>
 <dt>Parameters:</dt>
 <dd>id - The ID of the report to retrieve the update status from.</dd>
 <dt>Returns:</dt>
-<dd>An update status object.</dd>
+<dd>A status object.</dd>
 </dl>
 </div>
 
@@ -301,7 +310,26 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line238" class="location">WG/API.php at line 238</a>
+<a href="../source/wg/api.php.html#line246" class="location">WG/API.php at line 246</a>
+
+<h3 id="createDataset()">createDataset</h3>
+<code class="signature">public  <a href="../wg/dataset.html">Dataset</a> <strong>createDataset</strong>(string name, string owner, string file, boolean isFileName, mixed filename)</code>
+<div class="details">
+<p>Creates a new dataset for a specific user.</p><p>Although the metadata of the dataset is returned, it is not yet imported.
+The status of the import can be checken using getImportStatus().</p><p>Files should be in valid CSV format.</p><dl>
+<dt>Parameters:</dt>
+<dd>name - The name of the dataset.</dd>
+<dd>owner - The ID of the users that will own this dataset.</dd>
+<dd>file - The filename of the file to be uploaded, or the contents of the file.</dd>
+<dd>isFileName - When true, the $file argument will be treated as a filename, otherwise it will be treated as the content of the CSV file itself.</dd>
+<dt>Returns:</dt>
+<dd>A newly created dataset object.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line269" class="location">WG/API.php at line 269</a>
 
 <h3 id="getDataset()">getDataset</h3>
 <code class="signature">public  <a href="../wg/dataset.html">Dataset</a> <strong>getDataset</strong>(string id)</code>
@@ -311,6 +339,21 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <dd>id - The dataset ID.</dd>
 <dt>Returns:</dt>
 <dd>The requested dataset.</dd>
+</dl>
+</div>
+
+<hr>
+
+<a href="../source/wg/api.php.html#line281" class="location">WG/API.php at line 281</a>
+
+<h3 id="getImportStatus()">getImportStatus</h3>
+<code class="signature">public  <a href="../wg/operationstatus.html">OperationStatus</a> <strong>getImportStatus</strong>(string id)</code>
+<div class="details">
+<p>Retrieve the import status of a specific dataset.</p><dl>
+<dt>Parameters:</dt>
+<dd>id - The ID of the dataset to retrieve the import status for.</dd>
+<dt>Returns:</dt>
+<dd>A status object.</dd>
 </dl>
 </div>
 
