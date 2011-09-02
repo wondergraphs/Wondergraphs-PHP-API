@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="generator" content="PHPDoctor 2RC4 (http://peej.github.com/phpdoctor/)">
-<meta name="when" content="Fri, 02 Sep 2011 14:29:58 +0000">
+<meta name="when" content="Fri, 02 Sep 2011 14:55:46 +0000">
 
 <link rel="stylesheet" type="text/css" href="../stylesheet.css">
 <link rel="start" href="../overview-summary.html">
@@ -99,9 +99,8 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 <td class="description"><p class="name"><a href="#createReport()">createReport</a>(string name, string dataset, string owner)</p><p class="description">Creates a new report for a specific user.</p></td>
 </tr>
 <tr>
-<td class="type"> void</td>
-<td class="description"><p class="name"><a href="#updateReportName()">updateReportName</a>(mixed id, mixed name)</p><p class="description">Change the name of a report.
-</p></td>
+<td class="type"> <a href="../wg/report.html">Report</a></td>
+<td class="description"><p class="name"><a href="#updateReportName()">updateReportName</a>(string id, string name)</p><p class="description">Change the name of a report.</p></td>
 </tr>
 <tr>
 <td class="type"> void</td>
@@ -264,16 +263,23 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line194" class="location">WG/API.php at line 194</a>
+<a href="../source/wg/api.php.html#line196" class="location">WG/API.php at line 196</a>
 
 <h3 id="updateReportName()">updateReportName</h3>
-<code class="signature">public  void <strong>updateReportName</strong>(mixed id, mixed name)</code>
+<code class="signature">public  <a href="../wg/report.html">Report</a> <strong>updateReportName</strong>(string id, string name)</code>
 <div class="details">
-<p>Change the name of a report.</p><p>Warning: This operation is not available yet.</p></div>
+<p>Change the name of a report.</p><dl>
+<dt>Parameters:</dt>
+<dd>id - The ID of the report to update.</dd>
+<dd>name - The new name of the report.</dd>
+<dt>Returns:</dt>
+<dd>The modified report is returned.</dd>
+</dl>
+</div>
 
 <hr>
 
-<a href="../source/wg/api.php.html#line203" class="location">WG/API.php at line 203</a>
+<a href="../source/wg/api.php.html#line211" class="location">WG/API.php at line 211</a>
 
 <h3 id="updateReportData()">updateReportData</h3>
 <code class="signature">public  void <strong>updateReportData</strong>(mixed id, mixed datasetId)</code>
@@ -282,7 +288,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line215" class="location">WG/API.php at line 215</a>
+<a href="../source/wg/api.php.html#line223" class="location">WG/API.php at line 223</a>
 
 <h3 id="getUpdateStatus()">getUpdateStatus</h3>
 <code class="signature">public  <a href="../wg/operationstatus.html">OperationStatus</a> <strong>getUpdateStatus</strong>(string id)</code>
@@ -297,7 +303,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line226" class="location">WG/API.php at line 226</a>
+<a href="../source/wg/api.php.html#line234" class="location">WG/API.php at line 234</a>
 
 <h3 id="getDatasets()">getDatasets</h3>
 <code class="signature">public  array <strong>getDatasets</strong>()</code>
@@ -310,7 +316,7 @@ Detail: <a href="#detail_field">Field</a> | <a href="#detail_method">Method</a> 
 
 <hr>
 
-<a href="../source/wg/api.php.html#line246" class="location">WG/API.php at line 246</a>
+<a href="../source/wg/api.php.html#line254" class="location">WG/API.php at line 254</a>
 
 <h3 id="createDataset()">createDataset</h3>
 <code class="signature">public  <a href="../wg/dataset.html">Dataset</a> <strong>createDataset</strong>(string name, string owner, string filename, boolean isFileName)</code>
@@ -329,7 +335,7 @@ The status of the import can be checken using getImportStatus().</p><p>Files sho
 
 <hr>
 
-<a href="../source/wg/api.php.html#line269" class="location">WG/API.php at line 269</a>
+<a href="../source/wg/api.php.html#line277" class="location">WG/API.php at line 277</a>
 
 <h3 id="getDataset()">getDataset</h3>
 <code class="signature">public  <a href="../wg/dataset.html">Dataset</a> <strong>getDataset</strong>(string id)</code>
@@ -344,7 +350,7 @@ The status of the import can be checken using getImportStatus().</p><p>Files sho
 
 <hr>
 
-<a href="../source/wg/api.php.html#line281" class="location">WG/API.php at line 281</a>
+<a href="../source/wg/api.php.html#line289" class="location">WG/API.php at line 289</a>
 
 <h3 id="getImportStatus()">getImportStatus</h3>
 <code class="signature">public  <a href="../wg/operationstatus.html">OperationStatus</a> <strong>getImportStatus</strong>(string id)</code>
